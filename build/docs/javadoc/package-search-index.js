@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.harbour.lecture1"},{"l":"com.harbour.lecture1.newpackage"},{"l":"com.harbour.lecture2"},{"l":"com.harbour.lecture2.movies"}];updateSearchResults();

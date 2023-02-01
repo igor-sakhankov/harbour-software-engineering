@@ -1,0 +1,10 @@
+package com.harbour.lecture1; #!/usr/bin/java --source 11
+ 
+public final class JavaScript {
+    public static void main(String[] args) {
+        System.out.println(
+            "TEST"
+        );
+        
+    }
+}
