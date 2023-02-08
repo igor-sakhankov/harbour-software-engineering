@@ -14,7 +14,17 @@ public class Airport {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(Airport.class);
 
-        System.out.println("...");
+        getCharacter();
     }
+    private static void getCharacter() {
+        var a =  'a';
+        var aInt = (int)'a';
 
+        final var lowercaseA = 97;
+        if (a == 'a' || a == lowercaseA) {
+            System.out.println("dp");
+        }
+
+        System.out.println(String.format("%s - character, %s - int presentation", a, aInt));
+    }
 }
