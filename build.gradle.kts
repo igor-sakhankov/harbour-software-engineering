@@ -1,5 +1,6 @@
 plugins {
     java
+    id("jacoco")
 }
 
 group = "com.harbour"
@@ -16,4 +17,16 @@ dependencies {
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
+}
+
+val jacocoTestReport = tasks.named<JacocoReport>("jacocoTestReport") {
+    executionData.from(fileTree(project.buildDir.absolutePath).include("jacoco/*.exec"))
+    classDirectories.setFrom(files(project.sourceSets.main.get().output))
+    sourceDirectories.setFrom(files(project.sourceSets.main.get().allSource.srcDirs))
+
+    reports {
+        xml.required.set(true)
+        csv.required.set(false)
+        html.required.set(true)
+    }
 }
