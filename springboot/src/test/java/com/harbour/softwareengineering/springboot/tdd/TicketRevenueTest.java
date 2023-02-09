@@ -82,4 +82,17 @@ class TicketRevenueTest {
         // then
         assertEquals(expectedRevenue, totalRevenue);
     }
+
+    @Test
+    void moreTicketSold2IsThirtyInRevenue() {
+        // given
+        var numberOfTickets = 10;
+        var expectedRevenue = new BigDecimal("300");
+
+        // when
+        var totalRevenue = venueRevenue.estimateTotalRevenue(numberOfTickets);
+
+        // then
+        assertEquals(expectedRevenue, totalRevenue);
+    }
 }
