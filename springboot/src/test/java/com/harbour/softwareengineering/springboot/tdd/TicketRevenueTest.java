@@ -19,7 +19,7 @@ class TicketRevenueTest {
     @Test
     void estimateTotalRevenue_whenLessThanOneTicketSold_shouldThrow() {
         // given
-        var numberOfTickets = 0;
+        var numberOfTickets = -1;
 
         // when
         // then
