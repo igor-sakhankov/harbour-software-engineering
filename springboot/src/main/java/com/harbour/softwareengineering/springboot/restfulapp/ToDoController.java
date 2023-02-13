@@ -30,7 +30,7 @@ public class ToDoController {
         @RequestHeader(name = "x-glovo-chaos-monkey-http-status-code") String myCustomHeader,
         @RequestParam(name = "test") String test
     ) {
-        final var strings = service.getActiveItems();
+        System.out.println("hello from lecture");
     }
 
 }
