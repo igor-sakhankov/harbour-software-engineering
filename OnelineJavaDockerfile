@@ -1,0 +1,4 @@
+FROM eclipse-temurin:19-alpine
+WORKDIR /app
+COPY ./docker /app
+CMD ["java", "HelloDocker.java"]

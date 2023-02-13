@@ -7,4 +7,9 @@ import java.util.List;
  */
 public class TicketRepository {
 
+    public void doSomething() {
+        var list = List.of();
+
+        list.add(new Object());
+    }
 }
