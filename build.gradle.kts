@@ -1,7 +1,7 @@
 plugins {
     java
     id("jacoco")
-    `maven-publish` apply false
+    id("maven-publish")
 }
 
 group = "com.harbour"
@@ -11,23 +11,20 @@ repositories {
     mavenCentral()
 }
 
-subprojects {
-    apply(plugin = "maven-publish")
-    configure<PublishingExtension> {
-        repositories {
-            maven {
-                name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/igor-sakhankov/harbour-software-engineering")
-                credentials {
-                    username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
-                    password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
-                }
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/igor-sakhankov/harbour-software-engineering")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
             }
         }
-        publications {
-            register<MavenPublication>("gpr") {
-                from(components["java"])
-            }
+    }
+    publications {
+        register<MavenPublication>("gpr") {
+            from(components["java"])
         }
     }
 }
